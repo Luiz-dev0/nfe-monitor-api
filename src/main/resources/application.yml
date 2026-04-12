@@ -1,0 +1,66 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/nfemonitor
+    username: nfemonitor
+    password: COLOQUE_AQUI
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  flyway:
+    enabled: true
+  mail:
+    host: smtp.mailtrap.io
+    port: 2525
+    username: SEU_USERNAME_MAILTRAP
+    password: SUA_SENHA_MAILTRAP
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+security:
+  jwt:
+    secret: COLOQUE_AQUI
+    expiration: 2592000000
+
+notification:
+  mock: true
+  email:
+    remetente: nfemonitor@seudominio.com
+  whatsapp:
+    evolution-api-url: http://localhost:8080
+    evolution-api-key: SUA_API_KEY_AQUI
+    instance-name: NFeMonitor
+
+cors:
+  allowed-origins: http://localhost:3000,http://localhost:5173,http://localhost:4173
+
+stripe:
+  secret-key: COLOQUE_AQUI
+  webhook-secret: COLOQUE_AQUI
+  success-url: http://localhost:5173/assinatura?checkout=success
+  cancel-url: http://localhost:5173/assinatura?checkout=cancel
+  price-id:
+    basico: price_1TBhZSJzxCFsG21FRpJ37OZx
+    pro: price_1TBhdoJzxCFsG21FAlj9ZGdP
+    enterprise: price_1TBhf2JzxCFsG21FuIBfKKuu
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: method
+    tags-sorter: alpha
+    try-it-out-enabled: true
+    filter: true
+  packages-to-scan: br.com.nfemonitor
+
+sefaz:
+  url:
+    distribuicao: https://hom1.nfe.fazenda.gov.br/NFeDistribuicaoDFe/NFeDistribuicaoDFe.asmx
+  ambiente: "2"
+  cnpj:
+    autorizador: ""
