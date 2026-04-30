@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/nfemonitor
     username: nfemonitor
-    password: COLOQUE_AQUI
+    password: Vf@9mXkR2#qLpT7z
   jpa:
     hibernate:
       ddl-auto: validate
